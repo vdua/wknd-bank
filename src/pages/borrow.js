@@ -1,15 +1,15 @@
 import React from 'react'
-import Image from 'next/image'
 import Cards from '../components/Card'
 import Footer from '../components/Footer'
 import LoremIpsum from '../components/Lorem'
 import Navigation from '../components/Navigation'
 import * as styles from './Borrow.module.css'
 import Seo from "../components/seo"
-// import {AdaptiveForm} from '@aemforms/af-react-renderer'
-// import {mappings} from '@aemforms/af-react-components'
-// import { useEffect, useState } from 'react'
-// import { Provider as Spectrum3Provider, defaultTheme } from '@adobe/react-spectrum'
+import {AdaptiveForm} from '@aemforms/af-react-renderer'
+import {mappings} from '@aemforms/af-react-components'
+import { useEffect, useState } from 'react'
+import { Provider as Spectrum3Provider, defaultTheme } from '@adobe/react-spectrum'
+import { graphql, useStaticQuery } from "gatsby"
 const cards = [
   {
     id: 1,
@@ -32,10 +32,36 @@ const cards = [
     description : 'No hidden fees'
   }
 ]
+const json = {
+    "adaptiveform": "0.11.0-Pre",
+    "items": [
+      {
+        "fieldType": "text-input",
+        "label": {
+          "value": "Enter your Name"
+        },
+        "name": "textInput"
+      }
+    ],
+    "metadata": {
+      "grammar": "json-formula-1.0.0",
+      "version": "1.0.0"
+    }
+  }
 
 const url = "http://localhost:4502/adobe/forms/af/L2NvbnRlbnQvZm9ybXMvYWYvd2tuZC9sb2FuLWNhbGN1bGF0b3ItMQ=="
 
-export default function Borrow({loanCalc1}) {
+export default function Borrow() {
+
+  const data = useStaticQuery(graphql`
+      query {
+        formJson {
+          definition
+        }
+      }
+    `)
+
+    console.log(data)
 
   return (
     <div className={styles.container}>
@@ -55,6 +81,9 @@ export default function Borrow({loanCalc1}) {
         <div className={styles.loanCalculator}>
             <h1>Use the calculator to see what works for you</h1>
         </div>
+        <Spectrum3Provider theme={defaultTheme}>
+            <AdaptiveForm mappings={mappings} formJson={data.formJson.definition} />
+        </Spectrum3Provider>
       </main>
 
         <Footer/>
