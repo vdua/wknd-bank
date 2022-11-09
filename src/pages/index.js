@@ -1,12 +1,5 @@
 import * as React from "react"
-
-import { StaticImage } from "gatsby-plugin-image"
-
-import Layout from "../components/layout"
 import Seo from "../components/seo"
-import {mappings} from '@aemforms/af-react-components'
-import { AdaptiveForm } from "@aemforms/af-react-renderer"
-import { Provider as Spectrum3Provider, defaultTheme } from '@adobe/react-spectrum'
 import * as styles from './Home.module.css'
 import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
