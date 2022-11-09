@@ -55,4 +55,4 @@ export default function Borrow() {
   )
 }
 
-export const Head = () => <Seo title="Borrow" />
+export const Head = () => <Seo title="WKND Bank | Borrow" />
