@@ -1,0 +1,161 @@
+.container {
+
+}
+
+.main {
+  min-height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.title a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 2rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .card,
+  .footer {
+    border-color: #222;
+  }
+  .code {
+    background: #111;
+  }
+  .logo img {
+    filter: invert(1);
+  }
+}
+
+.hero {
+  background: #b7e0e2;
+  width: 100%;
+  padding: 2rem;
+  padding-left: 180px;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  margin-bottom: 0.8rem;
+  width: 50%;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-top:0rem;
+}
+
+.welcomeContainer {
+  background: #f2f9f5;
+  width: 100%;
+}
+
+.welcome {
+  margin: auto;
+  padding: 80px;
+  background: white;
+  position: relative;
+  top: -40px;
+  border-radius: 14px;
+  width: 70%;
+}
+
+.welcome p {
+  font-size: 1.5rem;
+  line-height: 2.3rem;
+  word-spacing: 0.3rem;
+}
+
+.welcome h1 {
+  font-size: 2.5rem;
+}
+
+.whyBank {
+  background-color: #f9fbfb;
+  display: flex;
+  position: relative;
+  margin: 60px;
+}
+
+.whyBankText {
+  padding: 4em;
+}
+
+.whyBankText ul {
+  list-style: none;
+}
+
+.whyBankImage {
+  background-image: url(../images/hero.jpeg);
+  width: 500px;
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: -140px;
+  position: relative;
+  top: -30px;
+  left: -30px;
+}
+
+.disclaimer {
+  width: 50%;
+}

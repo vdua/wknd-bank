@@ -1,121 +1,90 @@
 import * as React from "react"
-import { Link } from "gatsby"
+
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
-
-const links = [
+import * as styles from './Home.module.css'
+import Navigation from "../components/Navigation"
+import Footer from "../components/Footer"
+import Cards from "../components/Card"
+import LoremIpsum from "../components/Lorem"
+const json = {
+  "adaptiveform": "0.11.0-Pre",
+  "items": [
+    {
+      "fieldType": "text-input",
+      "label": {
+        "value": "Enter your Name"
+      },
+      "name": "textInput"
+    }
+  ],
+  "metadata": {
+    "grammar": "json-formula-1.0.0",
+    "version": "1.0.0"
+  }
+}
+const cards = [
   {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
+    id: 1,
+    title: 'Accounts',
+    description : 'Manage your Money'
   },
   {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
+    id: 2,
+    title: 'Loans',
+    description : 'Achieve your Goals'
   },
   {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
+    id: 3,
+    title: 'Credit Cards',
+    description : 'Get Ahead'
   },
   {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
-
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
+    id: 4,
+    title: 'Save & Invest',
+    description : 'Grow your money'
+  }
 ]
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
 const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
+  <div className={styles.container}>
+    <Navigation/>
+
+<main className={styles.main}>
+  <div className={styles.hero}>
+    <h1>We take your money matters seriously.</h1>
+    <h2>so that you do not.</h2>
+  </div>
+  <div className={styles.welcomeContainer}>
+    <div className={styles.welcome}>
+      <h1>Welcome to your new bank</h1>
+      <p>We’re here to bring your life goals closer, and always will be... 
+        Because we take your money choices as seriously as you do. #WKNDBank</p>
     </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
+    <h1 className={styles.title}>
+      What we can do
+    </h1>
+    <Cards cards={cards}/>
+  </div>
+  <div className={styles.whyBank}>
+    <div className={styles.whyBankImage}></div>
+    <div className={styles.whyBankText}>
+      <h1>Why WKND</h1>
+      <ul>
+        <li><LoremIpsum words={10}/></li>
+        <li><LoremIpsum words={10}/></li>
+        <li><LoremIpsum words={10}/></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<Footer />
+    </div>
 )
 
 /**
