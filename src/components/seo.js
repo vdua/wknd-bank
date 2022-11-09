@@ -37,6 +37,10 @@ function Seo({ description, title, children }) {
       <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
+      <link rel="icon" href="/favicon1.ico" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Geostar+Fill&display=swap" rel="stylesheet" />
       {children}
     </>
   )
