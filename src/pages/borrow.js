@@ -6,10 +6,11 @@ import Navigation from '../components/Navigation'
 import * as styles from './Borrow.module.css'
 import Seo from "../components/seo"
 import {AdaptiveForm} from '@aemforms/af-react-renderer'
-import {mappings} from '@aemforms/af-react-components'
+import {mappings} from '../components/forms/mappings'
 import { useEffect, useState } from 'react'
 import { Provider as Spectrum3Provider, defaultTheme } from '@adobe/react-spectrum'
 import { graphql, useStaticQuery } from "gatsby"
+
 const cards = [
   {
     id: 1,
