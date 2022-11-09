@@ -9,22 +9,7 @@ import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
 import Cards from "../components/Card"
 import LoremIpsum from "../components/Lorem"
-const json = {
-  "adaptiveform": "0.11.0-Pre",
-  "items": [
-    {
-      "fieldType": "text-input",
-      "label": {
-        "value": "Enter your Name"
-      },
-      "name": "textInput"
-    }
-  ],
-  "metadata": {
-    "grammar": "json-formula-1.0.0",
-    "version": "1.0.0"
-  }
-}
+
 const cards = [
   {
     id: 1,
